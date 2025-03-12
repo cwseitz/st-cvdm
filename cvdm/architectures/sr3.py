@@ -6,12 +6,12 @@ from tensorflow.keras.layers import AveragePooling2D, Conv2D, Input, UpSampling2
 from tensorflow.keras.models import Model
 from tensorflow_addons.layers import GroupNormalization
 
-from cvdm.architectures.components.attention_block import attention_block
-from cvdm.architectures.components.deep_residual_block import (
+from st_cvdm.architectures.components.attention_block import attention_block
+from st_cvdm.architectures.components.deep_residual_block import (
     deep_resblock,
     up_deep_resblock,
 )
-from cvdm.architectures.components.residual_block import resblock, up_resblock
+from st_cvdm.architectures.components.residual_block import resblock, up_resblock
 
 
 def upsample(x: tf.Tensor, use_conv: bool = False) -> tf.Tensor:

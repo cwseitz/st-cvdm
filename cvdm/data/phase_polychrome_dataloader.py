@@ -3,7 +3,7 @@ from typing import Iterator, Tuple
 import numpy as np
 from skimage.transform import resize
 
-from cvdm.utils.phase_utils import FresnelPropagator, light_component_sim
+from st_cvdm.utils.phase_utils import FresnelPropagator, light_component_sim
 
 DZ = -1
 

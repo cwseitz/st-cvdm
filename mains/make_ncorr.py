@@ -30,6 +30,6 @@ axes[1].set_title("Empirical Covariance Matrix")
 plt.show()
 
 print(image_stack.shape)
-path = "/N/slate/cwseitz/st-cvdm/Ncorr/"
+path = "/N/slate/cwseitz/st-st_cvdm/Ncorr/"
 imsave(path + "lr.tif", image_stack)
 np.save(path + "cov_matrix.npy", cov_matrix)

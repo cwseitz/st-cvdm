@@ -9,7 +9,7 @@ from skimage.util import montage
 from tensorflow.keras.models import Model
 from tqdm import tqdm
 
-from cvdm.utils.metrics_utils import calculate_metrics
+from st_cvdm.utils.metrics_utils import calculate_metrics
 
 
 def ddpm_obtain_sr_img(

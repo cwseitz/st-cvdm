@@ -3,7 +3,7 @@ from skimage.io import imread
 from glob import glob
 import matplotlib.pyplot as plt
 
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-100_N0-500-1000/eval_data/N100-1/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-100_N0-500-1000/eval_data/N100-1/'
 lr100 = imread(path + 'lr-1x.tif')[0]
 hr100_true = imread(path + 'y-0-0.tif')
 hr100_files = glob(path + 'z-0-*.tif')
@@ -75,6 +75,6 @@ for spine in inset.spines.values():
     spine.set_linewidth(1)
 
 plt.subplots_adjust(wspace=0.2,hspace=0.3)
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-4.png',dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-4.png',dpi=300)
 plt.show()
 

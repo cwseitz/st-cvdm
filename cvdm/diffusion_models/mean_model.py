@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import Input
 from tensorflow.keras.models import Model
 
-from cvdm.architectures.unet import UNet
+from st_cvdm.architectures.unet import UNet
 
 
 def mean_model(input_shape_condition: tf.TensorShape, out_channels: int) -> Model:

@@ -5,7 +5,7 @@ from glob import glob
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-path = '/N/slate/cwseitz/cvdm/Nup96/4x/Archive/_sum5/'
+path = '/N/slate/cwseitz/st_cvdm/Nup96/4x/Archive/_sum5/'
 lr100 = imread(path + 'lr-1x-sum.tif')
 
 x0, y0 = 57, 57
@@ -61,6 +61,6 @@ ax[0, 0].set_title(r'$\hat{x}$', fontsize=14)
 ax[0, 1].set_title(r'$\hat{y}_0$', fontsize=14)
 
 plt.subplots_adjust(wspace=0.1, hspace=0.1)
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-6.png', dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-6.png', dpi=300)
 plt.show()
 

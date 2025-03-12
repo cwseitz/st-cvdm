@@ -6,8 +6,8 @@ import json
 import time
 from pathlib import Path
 from sklearn.cluster import DBSCAN
-from cvdm.psf import LoGDetector
-from cvdm.psf.psf2d import MLE2D_BFGS
+from st_cvdm.psf import LoGDetector
+from st_cvdm.psf.psf2d import MLE2D_BFGS
 from numpy.linalg import inv
 import matplotlib.cm as cm
 

@@ -3,26 +3,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
 
-path_hd = '/N/slate/cwseitz/cvdm/Tubes/Real/Real_High_Density/'
-path_ls = '/N/slate/cwseitz/cvdm/Tubes/Real/Real_Long_Sequence/'
+path_hd = '/N/slate/cwseitz/st_cvdm/Tubes/Real/Real_High_Density/'
+path_ls = '/N/slate/cwseitz/st_cvdm/Tubes/Real/Real_Long_Sequence/'
 
 summed_hd = imread(path_hd + 'SUM_lr-1x.tif')
 summed_ls = imread(path_ls + 'SUM_lr-1x.tif')
 
-ls_cvdm = imread(path_ls + 'eval/render-cvdm.tif')
+ls_st_cvdm = imread(path_ls + 'eval/render-st_cvdm.tif')
 ls_thunder = imread(path_ls + 'thunderstorm/render.tif')
 
-hd_cvdm = imread(path_hd + 'eval/render-cvdm.tif')
+hd_st_cvdm = imread(path_hd + 'eval/render-st_cvdm.tif')
 hd_thunder = imread(path_hd + 'thunderstorm/render-crop.tif')
 
-ls_cvdm = np.roll(ls_cvdm,1,axis=1)
-ls_combined_image = np.zeros((*ls_cvdm.shape, 3), dtype=np.float32)
-ls_combined_image[..., 0] = ls_cvdm / ls_cvdm.max()
+ls_st_cvdm = np.roll(ls_st_cvdm,1,axis=1)
+ls_combined_image = np.zeros((*ls_st_cvdm.shape, 3), dtype=np.float32)
+ls_combined_image[..., 0] = ls_st_cvdm / ls_st_cvdm.max()
 ls_combined_image[..., 2] = ls_thunder / ls_thunder.max()
 
-hd_cvdm = np.roll(hd_cvdm,20,axis=0)
-hd_combined_image = np.zeros((*hd_cvdm.shape, 3), dtype=np.float32)
-hd_combined_image[..., 0] = hd_cvdm / hd_cvdm.max()
+hd_st_cvdm = np.roll(hd_st_cvdm,20,axis=0)
+hd_combined_image = np.zeros((*hd_st_cvdm.shape, 3), dtype=np.float32)
+hd_combined_image[..., 0] = hd_st_cvdm / hd_st_cvdm.max()
 hd_combined_image[..., 2] = hd_thunder / hd_thunder.max()
 
 fig, ax = plt.subplots(2, 2, figsize=(5,5))
@@ -53,7 +53,7 @@ ax[0, 1].axis('off')
 ax[1, 1].axis('off')
 
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, wspace=0.1, hspace=0.1)
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-11-1.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-11-1.png',dpi=200)
 plt.show()
 
 fig_line, ax_line = plt.subplots(2,1,figsize=(5,4))
@@ -95,5 +95,5 @@ ax_line[1].spines['right'].set_visible(False)
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, wspace=0.1, hspace=0.1)
 
 plt.tight_layout()
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-11-2.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-11-2.png',dpi=200)
 plt.show()

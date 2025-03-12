@@ -6,8 +6,8 @@ from skimage.restoration import rolling_ball
 from scipy.ndimage import median_filter
 from matplotlib.ticker import ScalarFormatter, MultipleLocator
 
-path_hd = '/N/slate/cwseitz/cvdm/Tubes/Real/Real_High_Density/'
-path_ls = '/N/slate/cwseitz/cvdm/Tubes/Real/Real_Long_Sequence/'
+path_hd = '/N/slate/cwseitz/st_cvdm/Tubes/Real/Real_High_Density/'
+path_ls = '/N/slate/cwseitz/st_cvdm/Tubes/Real/Real_Long_Sequence/'
 
 hd_idx = 0; ls_idx = 0; ls_sum_idx = 0
 hd_1x = imread(path_hd + 'lr-1x-crop.tif')[hd_idx]
@@ -86,6 +86,6 @@ for spine in inset.spines.values():
     spine.set_linewidth(1)
 
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, wspace=0.1, hspace=0.1)
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-10.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-10.png',dpi=200)
 
 plt.show()

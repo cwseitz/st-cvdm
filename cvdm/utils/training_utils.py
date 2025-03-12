@@ -5,12 +5,12 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import Model
 
-from cvdm.configs.data_config import DataConfig
-from cvdm.data.image_dir_dataloader import ImageDirDataloader
-from cvdm.data.npy_dataloader import NpyDataloader
-from cvdm.data.phase_2shot_dataloader import Phase2ShotDataloader
-from cvdm.data.phase_polychrome_dataloader import PhasePolychromeDataloader
-from cvdm.data.loco_dataloader import LocoDataLoader
+from st_cvdm.configs.data_config import DataConfig
+from st_cvdm.data.image_dir_dataloader import ImageDirDataloader
+from st_cvdm.data.npy_dataloader import NpyDataloader
+from st_cvdm.data.phase_2shot_dataloader import Phase2ShotDataloader
+from st_cvdm.data.phase_polychrome_dataloader import PhasePolychromeDataloader
+from st_cvdm.data.loco_dataloader import LocoDataLoader
 
 def prepare_dataset(
     task: str, data_config: DataConfig, training: bool
@@ -97,7 +97,7 @@ def prepare_model_input(
     return [dfy, x, ft]
 
 
-def train_on_batch_cvdm(
+def train_on_batch_st_cvdm(
     batch_x: np.ndarray, batch_y: np.ndarray, joint_model: Model, diff_inp: bool = False
 ) -> np.ndarray:
     model_input = prepare_model_input(batch_x, batch_y, diff_inp)

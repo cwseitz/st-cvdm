@@ -1,4 +1,4 @@
-name: cvdm
+name: st_cvdm
 channels:
   - bioconda
   - conda-forge
@@ -365,4 +365,4 @@ dependencies:
       - uri-template==1.3.0
       - webcolors==24.8.0
       - websocket-client==1.8.0
-prefix: /N/u/cwseitz/Quartz/.conda/envs/cvdm
+prefix: /N/u/cwseitz/Quartz/.conda/envs/st_cvdm

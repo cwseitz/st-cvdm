@@ -3,15 +3,15 @@ from skimage.io import imread
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-100_N0-500-1000/eval_data/N100-1/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-100_N0-500-1000/eval_data/N100-1/'
 lr100 = imread(path+'lr-1x.tif')[0]
 hr100_true = imread(path+'y-0-0.tif')
 hr100 = imread(path+'z-0-0.tif')
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-200_N0-500-1000/eval_data/N200-1/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-200_N0-500-1000/eval_data/N200-1/'
 lr200 = imread(path+'lr-1x.tif')[0]
 hr200_true = imread(path+'y-0-0.tif')
 hr200 = imread(path+'z-0-0.tif')
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-500_N0-500-1000/eval_data/N500-1/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-500_N0-500-1000/eval_data/N500-1/'
 lr500 = imread(path+'lr-1x.tif')[0]
 hr500_true = imread(path+'y-0-0.tif')
 hr500 = imread(path+'z-0-0.tif')
@@ -79,6 +79,6 @@ axes[0, 0].set_title(r'$x$', fontsize=16)
 axes[0, 1].set_title(r'$y_0$', fontsize=16)
 axes[0, 2].set_title(r'$\hat{y}_0$', fontsize=16)
 
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-3.png',dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-3.png',dpi=300)
 plt.show()
 

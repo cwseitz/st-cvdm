@@ -3,7 +3,7 @@ from typing import Iterator, Tuple
 import numpy as np
 from PIL import Image
 
-from cvdm.utils.data_utils import read_and_patch_image_from_filename
+from st_cvdm.utils.data_utils import read_and_patch_image_from_filename
 
 
 class ImageDirDataloader:

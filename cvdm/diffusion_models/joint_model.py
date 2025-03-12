@@ -4,13 +4,13 @@ import tensorflow as tf
 from tensorflow.keras.layers import Input, Lambda
 from tensorflow.keras.models import Model
 
-from cvdm.configs.model_config import ModelConfig
-from cvdm.diffusion_models.mean_model import mean_model
-from cvdm.diffusion_models.noise_model import noise_model
-from cvdm.diffusion_models.variance_model import variance_model
-from cvdm.utils.data_utils import obtain_noisy_sample
-from cvdm.utils.loss_utils import linear_loss, normal_kl
-from cvdm.utils.training_utils import taylor_expand_gamma, time_grad
+from st_cvdm.configs.model_config import ModelConfig
+from st_cvdm.diffusion_models.mean_model import mean_model
+from st_cvdm.diffusion_models.noise_model import noise_model
+from st_cvdm.diffusion_models.variance_model import variance_model
+from st_cvdm.utils.data_utils import obtain_noisy_sample
+from st_cvdm.utils.loss_utils import linear_loss, normal_kl
+from st_cvdm.utils.training_utils import taylor_expand_gamma, time_grad
 
 
 def create_joint_model(
@@ -109,7 +109,7 @@ def create_joint_model(
         return n_model, joint_model, sch_model, None
 
 
-def instantiate_cvdm(
+def instantiate_st_cvdm(
     lr: float,
     generation_timesteps: int,
     cond_shape: tf.TensorShape,

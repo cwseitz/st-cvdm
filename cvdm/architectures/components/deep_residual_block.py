@@ -5,7 +5,7 @@ from tensorflow.keras.activations import swish
 from tensorflow.keras.layers import Concatenate, Conv2D, Dropout
 from tensorflow_addons.layers import GroupNormalization
 
-from cvdm.architectures.components.conditional_instance_normalization import (
+from st_cvdm.architectures.components.conditional_instance_normalization import (
     ConditionalInstanceNormalization,
 )
 

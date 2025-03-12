@@ -3,11 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import ScalarFormatter, MultipleLocator
 
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-100_N0-500-1000/eval_data/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-100_N0-500-1000/eval_data/'
 df100 = pd.read_csv(path + 'N100-error.csv')
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-200_N0-500-1000/eval_data/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-200_N0-500-1000/eval_data/'
 df200 = pd.read_csv(path + 'N200-error.csv')
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-500_N0-500-1000/eval_data/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-500_N0-500-1000/eval_data/'
 df500 = pd.read_csv(path + 'N500-error.csv')
 
 def compute_stats(df):
@@ -72,6 +72,6 @@ ax2.yaxis.set_major_locator(MultipleLocator(5))
 ax1.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=3, frameon=False,fontsize=12)
 ax2.grid()
 plt.tight_layout()
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-1.png',dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-1.png',dpi=300)
 plt.show()
 

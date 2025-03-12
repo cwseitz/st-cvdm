@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from skimage.io import imread
 import numpy as np
 
-path='/N/slate/cwseitz/cvdm/Nup96/4x/Archive/sum1/'
+path='/N/slate/cwseitz/st_cvdm/Nup96/4x/Archive/sum1/'
 lr1x_sum1 = imread(path+'lr-1x.tif')[:-1]
 
 nframes,nx,ny = lr1x_sum1.shape
@@ -18,5 +18,5 @@ for axi in ax.ravel():
     axi.set_xticks([])
     axi.set_yticks([])
 plt.tight_layout()
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-9.png', dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-9.png', dpi=300)
 plt.show()

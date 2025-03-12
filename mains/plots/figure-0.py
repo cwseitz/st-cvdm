@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from miniSMLM import generators, localize, psf
-from cvdm.make import BasicKDE
+from st_cvdm.make import BasicKDE
 
 config = {
     "sigma": 0.92,
@@ -38,5 +38,5 @@ for axi in ax.ravel():
     axi.spines[['left','right','top','bottom']].set_visible(False)
 plt.tight_layout()
 plt.subplots_adjust(hspace=0.0)
-plt.savefig('/N/slate/cwseitz/cvdm/figure-0-1.png',dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/figure-0-1.png',dpi=300)
 plt.show()

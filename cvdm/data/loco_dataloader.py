@@ -1,6 +1,6 @@
 from typing import Iterator, Tuple
 import numpy as np
-from cvdm.utils.data_utils import center_crop
+from st_cvdm.utils.data_utils import center_crop
 from skimage.io import imread, imsave
 
 class LocoDataLoader:

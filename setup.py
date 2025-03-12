@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='cvdm',
+    name='st_cvdm',
     version='0.0.1',
     description='',
-    packages=['cvdm'],
+    packages=['st_cvdm'],
 )

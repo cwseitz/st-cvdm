@@ -1,6 +1,6 @@
 conda version 24.1.2 python 3.11.7 unloaded.
 conda version 24.1.2 python 3.11.7 loaded.
-/var/spool/slurm/d/job5762350/slurm_script: line 17: cd: git/cvdm: No such file or directory
+/var/spool/slurm/d/job5762350/slurm_script: line 17: cd: git/st_cvdm: No such file or directory
 2025-03-11 17:08:42.508076: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 2025-03-11 17:08:43.134406: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
 2025-03-11 17:08:45.455246: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
@@ -9,7 +9,7 @@ conda version 24.1.2 python 3.11.7 loaded.
 2025-03-11 17:08:46.416658: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
 2025-03-11 17:08:46.417904: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-/N/u/cwseitz/Quartz/.conda/envs/cvdm/lib/python3.11/site-packages/tensorflow_addons/utils/tfa_eol_msg.py:23: UserWarning: 
+/N/u/cwseitz/Quartz/.conda/envs/st_cvdm/lib/python3.11/site-packages/tensorflow_addons/utils/tfa_eol_msg.py:23: UserWarning: 
 
 TensorFlow Addons (TFA) has ended development and introduction of new features.
 TFA has entered a minimal maintenance and release mode until a planned end of life in May 2024.
@@ -25,25 +25,25 @@ Num GPUs Available:  0
 Getting data...
 Creating model...
 Traceback (most recent call last):
-  File "/geode2/home/u020/cwseitz/Quartz/git/st-cvdm/mains/train.py", line 207, in <module>
+  File "/geode2/home/u020/cwseitz/Quartz/git/st-st_cvdm/mains/train.py", line 207, in <module>
     main()
-  File "/geode2/home/u020/cwseitz/Quartz/git/st-cvdm/mains/train.py", line 81, in main
-    models = instantiate_cvdm(
+  File "/geode2/home/u020/cwseitz/Quartz/git/st-st_cvdm/mains/train.py", line 81, in main
+    models = instantiate_st_cvdm(
              ^^^^^^^^^^^^^^^^^
-  File "/geode2/home/u020/cwseitz/Quartz/git/cvdm/cvdm/diffusion_models/joint_model.py", line 130, in instantiate_cvdm
+  File "/geode2/home/u020/cwseitz/Quartz/git/st_cvdm/st_cvdm/diffusion_models/joint_model.py", line 130, in instantiate_st_cvdm
     models = create_joint_model(
              ^^^^^^^^^^^^^^^^^^^
-  File "/geode2/home/u020/cwseitz/Quartz/git/cvdm/cvdm/diffusion_models/joint_model.py", line 31, in create_joint_model
+  File "/geode2/home/u020/cwseitz/Quartz/git/st_cvdm/st_cvdm/diffusion_models/joint_model.py", line 31, in create_joint_model
     sch_model = variance_model(input_shape_condition, out_channels)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/geode2/home/u020/cwseitz/Quartz/git/cvdm/cvdm/diffusion_models/variance_model.py", line 29, in variance_model
+  File "/geode2/home/u020/cwseitz/Quartz/git/st_cvdm/st_cvdm/diffusion_models/variance_model.py", line 29, in variance_model
     model, _ = UNet(
                ^^^^^
-  File "/geode2/home/u020/cwseitz/Quartz/git/cvdm/cvdm/architectures/unet.py", line 160, in UNet
+  File "/geode2/home/u020/cwseitz/Quartz/git/st_cvdm/st_cvdm/architectures/unet.py", line 160, in UNet
     merge7 = Concatenate()([conv3, up7])
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/N/u/cwseitz/Quartz/.conda/envs/cvdm/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+  File "/N/u/cwseitz/Quartz/.conda/envs/st_cvdm/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
     raise e.with_traceback(filtered_tb) from None
-  File "/N/u/cwseitz/Quartz/.conda/envs/cvdm/lib/python3.11/site-packages/keras/src/layers/merging/concatenate.py", line 131, in build
+  File "/N/u/cwseitz/Quartz/.conda/envs/st_cvdm/lib/python3.11/site-packages/keras/src/layers/merging/concatenate.py", line 131, in build
     raise ValueError(err_msg)
 ValueError: A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(None, 25, 25, 128), (None, 24, 24, 128)]

@@ -6,7 +6,7 @@ import numpy as np
 import tensorflow as tf
 from tqdm import trange
 
-from cvdm.configs.utils import (
+from st_cvdm.configs.utils import (
     create_data_config,
     create_eval_config,
     create_model_config,
@@ -14,18 +14,18 @@ from cvdm.configs.utils import (
     create_training_config,
     load_config_from_yaml,
 )
-from cvdm.diffusion_models.joint_model import instantiate_cvdm
-from cvdm.utils.inference_utils import (
+from st_cvdm.diffusion_models.joint_model import instantiate_st_cvdm
+from st_cvdm.utils.inference_utils import (
     log_loss,
     log_metrics,
     obtain_output_montage_and_metrics,
     save_output_montage,
     save_weights,
 )
-from cvdm.utils.training_utils import (
+from st_cvdm.utils.training_utils import (
     prepare_dataset,
     prepare_model_input,
-    train_on_batch_cvdm,
+    train_on_batch_st_cvdm,
 )
 
 tf.keras.utils.set_random_seed(42)
@@ -78,7 +78,7 @@ def main() -> None:
     epochs = training_config.epochs
     generation_timesteps = eval_config.generation_timesteps
     print("Creating model...")
-    models = instantiate_cvdm(
+    models = instantiate_st_cvdm(
         lr=training_config.lr,
         generation_timesteps=generation_timesteps,
         cond_shape=x_shape,
@@ -119,7 +119,7 @@ def main() -> None:
             batch_x, batch_y = batch
             print(f'Epoch {ep}, Step: {step}')
             cmap = "gray" if task in ["loco", "biosr_phase", "imagenet_phase"] else None
-            cumulative_loss += train_on_batch_cvdm(
+            cumulative_loss += train_on_batch_st_cvdm(
                 batch_x, batch_y, joint_model, diff_inp=diff_inp
             )
 

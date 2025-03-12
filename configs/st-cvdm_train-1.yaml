@@ -14,7 +14,7 @@ training:
   epochs: 50
   
 eval:
-  output_path: "/N/slate/cwseitz/st-cvdm/Ncorr"
+  output_path: "/N/slate/cwseitz/st-st_cvdm/Ncorr"
   generation_timesteps: 200
   checkpoint_freq: 1000
   log_freq: 10
@@ -23,7 +23,7 @@ eval:
   val_len: 10
 
 data:
-  dataset_path: "/N/slate/cwseitz/st-cvdm/Ncorr/"
+  dataset_path: "/N/slate/cwseitz/st-st_cvdm/Ncorr/"
   n_samples: 500
   batch_size: 2
   im_size: 64

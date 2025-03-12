@@ -2,11 +2,11 @@ from typing import Any, Dict, Optional
 
 import yaml
 
-from cvdm.configs.data_config import DataConfig
-from cvdm.configs.eval_config import EvalConfig
-from cvdm.configs.model_config import ModelConfig
-from cvdm.configs.neptune_config import NeptuneConfig
-from cvdm.configs.training_config import TrainingConfig
+from st_cvdm.configs.data_config import DataConfig
+from st_cvdm.configs.eval_config import EvalConfig
+from st_cvdm.configs.model_config import ModelConfig
+from st_cvdm.configs.neptune_config import NeptuneConfig
+from st_cvdm.configs.training_config import TrainingConfig
 
 
 def load_config_from_yaml(yaml_file: str) -> Dict[str, Any]:

@@ -3,8 +3,8 @@ import tensorflow as tf
 from tensorflow.keras.layers import Concatenate, Input
 from tensorflow.keras.models import Model
 
-from cvdm.architectures.sr3 import sr3
-from cvdm.architectures.unet import UNet
+from st_cvdm.architectures.sr3 import sr3
+from st_cvdm.architectures.unet import UNet
 
 
 def noise_model(

@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from cvdm.psf import crlb2d
+from st_cvdm.psf import crlb2d
 
 class CRB2D:
     def __init__(self):

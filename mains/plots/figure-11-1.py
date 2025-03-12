@@ -3,49 +3,49 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
 
-path_hd = '/N/slate/cwseitz/cvdm/Tubes/Real/Real_High_Density/'
-path_ls = '/N/slate/cwseitz/cvdm/Tubes/Real/Real_Long_Sequence/'
+path_hd = '/N/slate/cwseitz/st_cvdm/Tubes/Real/Real_High_Density/'
+path_ls = '/N/slate/cwseitz/st_cvdm/Tubes/Real/Real_Long_Sequence/'
 
 summed_hd = imread(path_hd + 'SUM_lr-1x.tif')
 summed_ls = imread(path_ls + 'SUM_lr-1x.tif')
 
-ls_cvdm = imread(path_ls + 'eval/render-cvdm.tif')
+ls_st_cvdm = imread(path_ls + 'eval/render-st_cvdm.tif')
 ls_thunder = imread(path_ls + 'thunderstorm/render.tif')
 ls_thunder_multi = imread(path_ls + 'thunderstorm-multi/render.tif')
 
-hd_cvdm = imread(path_hd + 'eval/render-cvdm.tif')
+hd_st_cvdm = imread(path_hd + 'eval/render-st_cvdm.tif')
 hd_thunder = imread(path_hd + 'thunderstorm/render-crop.tif') #multi
 
-ls_cvdm = np.roll(ls_cvdm,1,axis=1)
-hd_cvdm = np.roll(hd_cvdm,5,axis=0)
-hd_cvdm = np.roll(hd_cvdm,4,axis=1)
+ls_st_cvdm = np.roll(ls_st_cvdm,1,axis=1)
+hd_st_cvdm = np.roll(hd_st_cvdm,5,axis=0)
+hd_st_cvdm = np.roll(hd_st_cvdm,4,axis=1)
 
 fig, ax = plt.subplots(1,4,figsize=(10,4))
 ax[0].imshow(summed_ls, cmap='gray', vmin=0.0)
 ax[1].imshow(ls_thunder, cmap='gray', vmin=0.0,vmax=40.0)
 ax[2].imshow(ls_thunder_multi,cmap='gray',vmin=0.0,vmax=30.0)
-ax[3].imshow(ls_cvdm, cmap='gray', vmin=0.0)
+ax[3].imshow(ls_st_cvdm, cmap='gray', vmin=0.0)
 for axi in ax.ravel():
     axi.set_xticks([])
     axi.set_yticks([])
 
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-11-1-1.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-11-1-1.png',dpi=200)
 
 fig, ax = plt.subplots(1,3,figsize=(8,4))
 ax[0].imshow(summed_hd, cmap='gray', vmin=0.0)
 ax[1].imshow(hd_thunder, cmap='gray', vmin=0.0)
-ax[2].imshow(hd_cvdm,cmap='gray')
+ax[2].imshow(hd_st_cvdm,cmap='gray')
 for axi in ax.ravel():
     axi.set_xticks([])
     axi.set_yticks([])
 
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-11-1-2.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-11-1-2.png',dpi=200)
 plt.show()
 
 fig_line, ax_line = plt.subplots(2,1,figsize=(5,5))
 
 x_hr = np.arange(50,80)
-y_combined_r = ls_cvdm[120, x_hr]
+y_combined_r = ls_st_cvdm[120, x_hr]
 y_combined_r /= y_combined_r.max()
 y_combined_b = ls_thunder[120, x_hr]
 y_combined_b /= y_combined_b.max()
@@ -65,7 +65,7 @@ ax_line[0].spines['top'].set_visible(False)
 ax_line[0].spines['right'].set_visible(False)
 
 x_hr = np.arange(83,113)
-y_combined_r = hd_cvdm[182, x_hr]
+y_combined_r = hd_st_cvdm[182, x_hr]
 y_combined_r /= y_combined_r.max()
 y_combined_b = hd_thunder[182, x_hr]
 y_combined_b /= y_combined_b.max()
@@ -82,15 +82,15 @@ ax_line[1].spines['top'].set_visible(False)
 ax_line[1].spines['right'].set_visible(False)
 
 plt.tight_layout()
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-11-1-3.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-11-1-3.png',dpi=200)
 plt.show()
 
 fig,ax=plt.subplots(1,2,figsize=(6,3))
 ax[0].imshow(hd_thunder[162:212,73:123],cmap='gray')
-ax[1].imshow(hd_cvdm[162:212,73:123],cmap='gray')
+ax[1].imshow(hd_st_cvdm[162:212,73:123],cmap='gray')
 for axi in ax.ravel():
     axi.set_xticks([])
     axi.set_yticks([])
-plt.savefig('/N/slate/cwseitz/cvdm/Tubes/Real/figure-11-1-4.png',dpi=200)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Tubes/Real/figure-11-1-4.png',dpi=200)
 plt.show()
 

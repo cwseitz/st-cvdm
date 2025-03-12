@@ -8,22 +8,22 @@ import neptune as neptune
 import numpy as np
 import tensorflow as tf
 
-from cvdm.configs.utils import (
+from st_cvdm.configs.utils import (
     create_data_config,
     create_eval_config,
     create_model_config,
     create_neptune_config,
     load_config_from_yaml,
 )
-from cvdm.diffusion_models.joint_model import instantiate_cvdm
-from cvdm.utils.inference_utils import (
+from st_cvdm.diffusion_models.joint_model import instantiate_st_cvdm
+from st_cvdm.utils.inference_utils import (
     log_loss,
     log_metrics,
     obtain_output_montage_and_metrics,
     save_output_montage,
     ddpm_obtain_sr_img
 )
-from cvdm.utils.training_utils import prepare_dataset, prepare_model_input
+from st_cvdm.utils.training_utils import prepare_dataset, prepare_model_input
 
 
 def main() -> None:
@@ -63,7 +63,7 @@ def main() -> None:
     generation_timesteps = eval_config.generation_timesteps
 
     print("Creating model...")
-    noise_model, joint_model, schedule_model, mu_model = instantiate_cvdm(
+    noise_model, joint_model, schedule_model, mu_model = instantiate_st_cvdm(
         lr=0.0,
         generation_timesteps=generation_timesteps,
         cond_shape=x_shape,

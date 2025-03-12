@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-100_N0-500-1000/eval_data/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-100_N0-500-1000/eval_data/'
 set_metrics_100 = np.load(path + 'N100-set.npz')['metrics']
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-200_N0-500-1000/eval_data/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-200_N0-500-1000/eval_data/'
 set_metrics_200 = np.load(path + 'N200-set.npz')['metrics']
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-500_N0-500-1000/eval_data/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-500_N0-500-1000/eval_data/'
 set_metrics_500 = np.load(path + 'N500-set.npz')['metrics']
 
 print(set_metrics_100.shape)
@@ -73,6 +73,6 @@ ax2.grid()
 ax2.set_xticks(density_values)
 
 plt.tight_layout()
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-2.png',dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-2.png',dpi=300)
 plt.show()
 

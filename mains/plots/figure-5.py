@@ -3,7 +3,7 @@ from skimage.io import imread
 from glob import glob
 import matplotlib.pyplot as plt
 
-path = '/N/slate/cwseitz/cvdm/Sim/4x/N-100_N0-500-1000/eval_data/N100-1/'
+path = '/N/slate/cwseitz/st_cvdm/Sim/4x/N-100_N0-500-1000/eval_data/N100-1/'
 hr100_files = glob(path + 'z-0-*.tif')
 hr100 = np.array([imread(f) for f in hr100_files])
 
@@ -26,6 +26,6 @@ for idx, i in enumerate(samples):
     ax[row, col].set_title(rf'$\hat{{y}}_{{0,{i}}}$', fontsize=14)
 
 plt.subplots_adjust(wspace=0.25, hspace=0.25)
-plt.savefig('/N/slate/cwseitz/cvdm/Sim/4x/Figure-5.png', dpi=300)
+plt.savefig('/N/slate/cwseitz/st_cvdm/Sim/4x/Figure-5.png', dpi=300)
 plt.show()
 

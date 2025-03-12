@@ -3,8 +3,8 @@ from typing import Iterator, Tuple
 import cv2
 import numpy as np
 
-from cvdm.utils.data_utils import read_and_patch_image_from_filename
-from cvdm.utils.phase_utils import FresnelPropagator
+from st_cvdm.utils.data_utils import read_and_patch_image_from_filename
+from st_cvdm.utils.phase_utils import FresnelPropagator
 
 WL = 0.521
 DZ = -1
