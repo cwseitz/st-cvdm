@@ -12,8 +12,8 @@
 
 #Load any modules that your program needs
 module load conda
-conda activate st_cvdm
+conda activate cvdm
 
 cd git/st_cvdm
-python mains/train.py --config-path=configs/st-st_cvdm_train-1.yaml
+python mains/train.py --config-path=configs/st-cvdm_train-1.yaml
 #srun ./my_program my_program_arguments

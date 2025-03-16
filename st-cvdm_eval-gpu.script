@@ -1,18 +1,19 @@
 #!/bin/bash
 
 #SBATCH -J CVDM_TRAIN
-#SBATCH -p general
+#SBATCH -p gpu
 #SBATCH --mail-user=cwseitz@iu.edu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=14:00:00
-#SBATCH --mem=0
+#SBATCH --gpus-per-node v100:4
+#SBATCH --mem=512G
 #SBATCH -A r01151
 
 #Load any modules that your program needs
 module load conda
-conda activate st_cvdm
+conda activate cvdm
 
 cd git/st_cvdm
-python mains/train.py --config-path=configs/st-st_cvdm_train-1.yaml
+python mains/eval.py --config-path=configs/st-cvdm_eval-2.yaml
 #srun ./my_program my_program_arguments

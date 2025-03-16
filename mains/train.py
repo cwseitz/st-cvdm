@@ -136,6 +136,7 @@ def main() -> None:
                     run_id=run_id,
                 )
 
+            """
             if step % image_freq == 0:
                 output_montage, metrics = obtain_output_montage_and_metrics(
                     batch_x,
@@ -157,6 +158,7 @@ def main() -> None:
                     prefix="train",
                     cmap=cmap,
                 )
+            """
 
             if step % val_freq == 0:
                 if model_config.zmd:
@@ -175,6 +177,7 @@ def main() -> None:
                 log_loss(run=run, avg_loss=val_loss, prefix="val")
                 # To speed up, images are only generated and metrics are calculated only for one batch.
                 random_batch = val_dataset.take(1)
+                """
                 for batch_x, batch_y in random_batch:
                     output_montage, metrics = obtain_output_montage_and_metrics(
                         batch_x,
@@ -196,6 +199,7 @@ def main() -> None:
                         prefix="val",
                         cmap=cmap,
                     )
+                 """
 
             step += 1
 
